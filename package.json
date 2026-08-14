@@ -1,0 +1,15 @@
+{
+  "name": "dsh-quant-workbench",
+  "version": "0.1.0",
+  "description": "量化研究工作台 Profile for DeepSeek Harness — A股/美股/加密货币行情、技术分析、策略回测。",
+  "type": "module",
+  "dsh": { "profile": { "bundles": ["@deepseek-ai/dsh-base"] } },
+  "dependencies": {
+    "dsh-tool-market-data": "^0.1.0",
+    "dsh-tool-backtest": "^0.1.0",
+    "dsh-llm-vision-router": "^0.1.0",
+    "dsh-session-analyst": "^0.1.0"
+  },
+  "keywords": ["dsh-plugin", "deepseek-harness", "quant", "trading", "backtest", "market-data"],
+  "license": "MIT"
+}

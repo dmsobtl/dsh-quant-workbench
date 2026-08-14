@@ -1,0 +1,36 @@
+# DSH Quant Workbench — 量化研究 Agent 配置
+#
+# 使用: dsh --profile .
+
+# === LLM ===
+- id: llm-deepseek
+  name: '@deepseek-ai/dsh-llm-deepseek'
+  config:
+    apiKey: ${DEEPSEEK_API_KEY}
+
+# === 视觉路由（K线图/收益曲线理解）===
+- id: vision-router
+  plugin: dsh-llm-vision-router
+  config:
+    visionProvider: openai
+    visionModel: gpt-4o-mini
+    toolResultsOnly: true
+
+# === 行情数据 ===
+- id: market-data
+  plugin: dsh-tool-market-data
+  config:
+    defaultMarket: cn
+    binanceBaseUrl: https://api.binance.com
+    # alphaVantageKey: ${ALPHA_VANTAGE_KEY}
+
+# === 回测引擎 ===
+- id: backtest
+  plugin: dsh-tool-backtest
+  config:
+    defaultCapital: 100000
+    defaultCommission: 0.001
+
+# === 会话分析（可选，分析研究效率）===
+- id: session-analyst
+  plugin: dsh-session-analyst
